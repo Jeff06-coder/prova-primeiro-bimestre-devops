@@ -1,0 +1,25 @@
+# Dependências — reinstaladas no build
+node_modules
+src/node_modules
+
+# Logs
+*.log
+npm-debug.log*
+
+# Variáveis de ambiente locais
+.env
+.env.*
+
+# Artefatos de desenvolvimento e teste
+coverage
+.nyc_output
+
+# Metadados do editor e SO
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# Dockerfile e arquivos de infra (não precisam ir para dentro da imagem)
+Dockerfile
+.dockerignore
