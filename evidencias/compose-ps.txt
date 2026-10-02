@@ -1,0 +1,23 @@
+﻿# Evidencia: docker compose ps — servicos rodando localmente
+# Comandos executados a partir da raiz do projeto:
+#
+#   docker compose up -d
+#   docker compose ps
+#
+# OUTPUT DO COMANDO (cole abaixo desta linha):
+
+
+jeff-coder@JeffersonOn:/mnt/c/Users/jeffe/OneDrive/Documentos/Programação/Faculdade/Dev
+Ops/prova-primeiro-bimestre-devops$ docker compose up -d
+[+] up 4/4
+ ✔ Network prova-primeiro-bimestre-devops_reservas_net Created                     0.1s
+ ✔ Volume prova-primeiro-bimestre-devops_postgres_data Created                     0.0s
+ ✔ Container reservas_db                               Healthy                     6.7s
+ ✔ Container reservas_api                              Started                     7.1s
+jeff-coder@JeffersonOn:/mnt/c/Users/jeffe/OneDrive/Documentos/Programação/Faculdade/Dev
+Ops/prova-primeiro-bimestre-devops$ docker compose ps
+NAME           IMAGE                                COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+reservas_api   prova-primeiro-bimestre-devops-api   "docker-entrypoint.s…"   api        17 seconds ago   Up 10 seconds             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+reservas_db    postgres:15-alpine                   "docker-entrypoint.s…"   postgres   17 seconds ago   Up 16 seconds (healthy)   5432/tcp
+jeff-coder@JeffersonOn:/mnt/c/Users/jeffe/OneDrive/Documentos/Programação/Faculdade/Dev
+Ops/prova-primeiro-bimestre-devops$ 

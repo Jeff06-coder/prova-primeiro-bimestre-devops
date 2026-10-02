@@ -1,0 +1,53 @@
+﻿# Evidencia: Build da imagem Docker da API de Reservas
+# Comando executado a partir da raiz do projeto:
+#
+#   docker build -t reservas-api ./app
+#
+# Cole aqui o output completo do comando acima.
+# Exemplo do output esperado:
+#
+# [+] Building 12.3s (12/12) FINISHED
+#  => [internal] load build definition from Dockerfile
+#  => [builder 1/3] FROM docker.io/library/node:20-alpine
+#  => [builder 2/3] COPY src/package.json ./
+#  => [builder 3/3] RUN npm install --omit=dev
+#  => [runner 1/4] RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+#  => [runner 2/4] COPY --from=builder /app/node_modules ./node_modules
+#  => [runner 3/4] COPY src/ ./src/
+#  => [runner 4/4] RUN chown -R appuser:appgroup /app
+#  => exporting to image
+#  => naming to docker.io/library/reservas-api
+#
+# OUTPUT DO COMANDO (cole abaixo desta linha):
+
+jeff-coder@JeffersonOn:/mnt/c/Users/jeffe/OneDrive/Documentos/Programação/Faculdade/Dev
+Ops/prova-primeiro-bimestre-devops$  docker build -t reservas-api ./app
+#
+[+] Building 0.8s (14/14) FINISHED                                      docker:default
+ => [internal] load build definition from Dockerfile                              0.0s
+ => => transferring dockerfile: 1.22kB                                            0.0s
+ => [internal] load metadata for docker.io/library/node:20-alpine                 0.1s
+ => [internal] load .dockerignore                                                 0.0s
+ => => transferring context: 411B                                                 0.0s
+ => [internal] load build context                                                 0.1s
+ => => transferring context: 93B                                                  0.1s
+ => [builder 1/4] FROM docker.io/library/node:20-alpine@sha256:3c77a043da159c2fc  0.0s
+ => => resolve docker.io/library/node:20-alpine@sha256:3c77a043da159c2fce3350ad8  0.0s
+ => CACHED [runner 2/6] RUN addgroup -S appgroup && adduser -S appuser -G appgro  0.0s
+ => CACHED [runner 3/6] WORKDIR /app                                              0.0s
+ => CACHED [builder 2/4] WORKDIR /app                                             0.0s
+ => CACHED [builder 3/4] COPY src/package.json src/package-lock.json* ./          0.0s
+ => CACHED [builder 4/4] RUN npm install --omit=dev                               0.0s
+ => CACHED [runner 4/6] COPY --from=builder /app/node_modules ./node_modules      0.0s
+ => CACHED [runner 5/6] COPY src/ ./src/                                          0.0s
+ => CACHED [runner 6/6] RUN chown -R appuser:appgroup /app                        0.0s
+ => exporting to image                                                            0.3s
+ => => exporting layers                                                           0.0s
+ => => exporting manifest sha256:6daba86c6c3a726c37293969bc248d9cc2ab820bfd3ee07  0.0s
+ => => exporting config sha256:03c59cf2a3b91d98ccd5b8a598697fd9b6d61955eed3a3e50  0.0s
+ => => exporting attestation manifest sha256:ae90d0b4420c5abeb26d2de8b795ae3c3eb  0.0s
+ => => exporting manifest list sha256:69332138bdaee9a0adde2c1d6ca50a481f9d7827f2  0.0s
+ => => naming to docker.io/library/reservas-api:latest                            0.0s
+ => => unpacking to docker.io/library/reservas-api:latest                         0.0s
+jeff-coder@JeffersonOn:/mnt/c/Users/jeffe/OneDrive/Documentos/Programação/Faculdade/Dev
+Ops/prova-primeiro-bimestre-devops$ 
